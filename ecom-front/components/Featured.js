@@ -23,6 +23,12 @@ const Wrapper = styled.div`
     img{
         max-width: 100%;
     }
+    
+`;
+const Column = styled.div`
+    display: flex;
+    align-items: center;
+    
 `;
 
 export default function Featured(){
@@ -30,16 +36,19 @@ export default function Featured(){
         <Bg>
           <Center>
             <Wrapper>
-             <div>  
-              <Title>Pro Final</Title>
+             <Column>  
+             <div>
+             <Title>Pro Final</Title>
                <Desc>Ta7ya L montakhab Lwatani Li rah khaser M3a janob ifriqia wa9ila
                  Ta7ya L montakhab Lwatani Li rah khaser M3a janob ifriqia wa9ila 
                  Ta7ya L montakhab Lwatani Li rah khaser M3a janob ifriqia wa9ila 
                </Desc>
              </div>
-             <div>
-              <img src="" alt="Tswira Jamila Jidan "/>
-             </div>
+             
+             </Column>
+             <Column>
+              <img src="https://png.pngtree.com/png-vector/20220224/ourmid/pngtree-turbo-illustration-black-color-png-image_4459990.png" alt="Tswira Jamila Jidan "/>
+             </Column>
             </Wrapper>     
           </Center>           
         </Bg>
