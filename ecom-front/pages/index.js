@@ -9,3 +9,17 @@ export default function HomePage() {
    </div>
  );
 }
+
+
+//export async function getServerSideProps() {
+ /* const featuredProductId = '648b30fbb165ef418a51ef1d';
+  await mongooseConnect();
+  const featuredProduct = await Product.findById(featuredProductId);
+  const newProducts = await Product.find({}, null, {sort: {'_id':-1}, limit:10});
+  return {
+    props: {
+      featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),
+      newProducts: JSON.parse(JSON.stringify(newProducts)),
+    },
+  };*/
+//}

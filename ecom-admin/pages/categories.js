@@ -79,8 +79,6 @@ function Categories({swal}) {
                     <tr>
                         <td>Category name</td>
                         <td>Parent category</td>
-                        <td>lkfta m9liya</td>
-                        <td>kfta m7wiya</td>
                         <td></td>
                     </tr>
                 </thead>
