@@ -2,22 +2,22 @@ import multiparty from 'multiparty';
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import fs from 'fs';
 import mime from 'mime-types';
+import { mongooseConnect } from '@/lib/mongoose';
 const bucketName = 'skyline-eco';
 
-export default async function handle(req,res)
-{
-    const form = new multiparty.Form();
-    const {fields,files} = await new Promise((resolve,reject) => {
+export default async function handle(req,res) {
+   await mongooseConnect();
+   await isAdminRequest(req,res);
 
-    form.parse(req, (err, fields, files) =>    
-     {
-        if (err) reject(err);
-        resolve({fields,files});
-        
-     });
-    });
-     console.log('length:', files.file.length);
-     const client = new S3Client({
+   const form = new multiparty.Form();
+   const {fields,files} = await new Promise((resolve,reject) => {
+      form.parse(req, (err, fields, files) => {
+         if (err) reject(err);
+         resolve({fields,files});
+      });
+   });
+   console.log('length:', files.file.length);
+   const client = new S3Client({
       region:'eu-west-3',
       credentials:
       {
