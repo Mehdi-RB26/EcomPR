@@ -6,6 +6,7 @@ border:0;
 padding: 5px 15px;
 border-radius: 5px;
 cursor: pointer;
+color: #fff;
 display: inline-flex;
 align-items: center;
 text-decoration: none;
@@ -39,6 +40,8 @@ ${props => props.size === 'l' && css `
 const StyledButton = styled.button`
     ${ButtonStyle}
 `;
+
+
 export default function Button({children,...rest}) {
     return(
         <StyledButton {...rest}>{children}</StyledButton>
