@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Button from "@/components/Button";
 import { styled } from "styled-components";
+import CartIcon from "./icons/CartIcon";
 
 const ProductWrapper = styled.div`
   
@@ -22,8 +24,11 @@ const WhiteBox = styled.div`
 //7:54:00 css d shit 
 const Title = styled.h2`
   font-weight: normal;
-  font-size:1rem;
+  font-size: 0.7rem;
   margin:0;
+`;
+const ProductInfoBox = styled.div`
+  margin-top: 5px;
 `;
 
 export default function ProductBox ({_id,title,description,price,images}) {
@@ -34,8 +39,10 @@ export default function ProductBox ({_id,title,description,price,images}) {
                     <img src={images[0]} alt=""/> 
                 </div>              
             </WhiteBox>
-            <Title>{title}</Title>
-           
+            <ProductInfoBox>
+              <Title>{title}</Title>
+              <Button primary><CartIcon /></Button>
+            </ProductInfoBox>            
         </ProductWrapper>
     );
-}
+} 
