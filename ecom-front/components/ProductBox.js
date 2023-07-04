@@ -28,7 +28,17 @@ const Title = styled.h2`
   margin:0;
 `;
 const ProductInfoBox = styled.div`
-  margin-top: 5px;
+  margin-top: 10px;
+`;
+const PriceRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-top:2px;
+`;
+const Price = styled.div`
+font-size: 1.5rem;
+font-weight: bold;
 `;
 
 export default function ProductBox ({_id,title,description,price,images}) {
@@ -41,7 +51,12 @@ export default function ProductBox ({_id,title,description,price,images}) {
             </WhiteBox>
             <ProductInfoBox>
               <Title>{title}</Title>
-              <Button primary><CartIcon /></Button>
+              <PriceRow>
+                <div>
+                {price}Dh
+                </div>                
+                <Button primary outline>Add To Cart</Button>                
+              </PriceRow>
             </ProductInfoBox>            
         </ProductWrapper>
     );
